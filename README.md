@@ -1,7 +1,7 @@
-# CucumberTraining Project
+# Java Test Framework
 
 ## 📌 Project Overview
-CucumberTraining is a **Selenium & Cucumber** automation framework integrated with **TestNG** for BDD (Behavior-Driven Development) testing. This project enables writing test cases in **Gherkin syntax** and mapping them to Java step definitions for UI automation.
+Java Selenium & Cucumber automation framework integrated with TestNG for BDD (Behavior-Driven Development) testing. This project enables writing test cases in Gherkin syntax and mapping them to Java step definitions for UI automation.
 
 ## 🚀 Getting Started
 
