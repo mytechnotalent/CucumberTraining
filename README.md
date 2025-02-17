@@ -7,7 +7,7 @@ Java Selenium & Cucumber automation framework integrated with TestNG for BDD (Be
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/mytechnotalent/CucumberTraining.git
+git clone https://github.com/mytechnotalent/jtf.git
 cd CucumberTraining
 ```
 ### 2️⃣ Install Dependencies
