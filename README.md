@@ -24,6 +24,12 @@ mvn test
 ```bash
 mvn verify
 ```
+### 5️⃣ Create `src/test/resources/secrets.properties` File
+```bash
+TEST_USERNAME=<USERNAME>
+TEST_PASSWORD=<PASSWORD>
+```
+
 Reports will be generated in `target/cucumber-reports.html`.
 
 ## 🛠 Dependencies
