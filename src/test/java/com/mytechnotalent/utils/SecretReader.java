@@ -10,6 +10,7 @@ public class SecretReader {
     static {
         try {
             FileInputStream fileInputStream = new FileInputStream("src/test/resources/secret.properties");
+
             properties.load(fileInputStream);
             fileInputStream.close();
         } catch (IOException e) {
@@ -20,9 +21,11 @@ public class SecretReader {
 
     public static String getProperty(String key) {
         String value = properties.getProperty(key);
+
         if (value == null || value.trim().isEmpty()) {
             throw new IllegalArgumentException("Missing or empty property: " + key);
         }
+
         return value;
     }
 }

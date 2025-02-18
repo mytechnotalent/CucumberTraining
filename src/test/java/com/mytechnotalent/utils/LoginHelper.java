@@ -25,23 +25,16 @@ public class LoginHelper {
         String accountPageUrl = baseUrl + ConfigReader.getProperty("ACCOUNT_PAGE_URL");
         String loginPageUrl = baseUrl + ConfigReader.getProperty("LOGIN_PAGE_URL");
 
-        // If already logged in, do nothing
         if (Objects.equals(driver.getCurrentUrl(), accountPageUrl)) {
             return;
         }
 
-        // Navigate to Login Page
         driver.get(loginPageUrl);
-
-        // Perform login
         loginPage.enterUsername(SecretReader.getProperty("TEST_USERNAME"));
         loginPage.enterPassword(SecretReader.getProperty("TEST_PASSWORD"));
         loginPage.clickLoginButton();
-
-        // Wait until login is successful
         wait.until(ExpectedConditions.urlToBe(accountPageUrl));
 
-        // Ensure login was successful
         assert Objects.equals(driver.getCurrentUrl(), accountPageUrl) : "Login failed, user not redirected.";
     }
 }

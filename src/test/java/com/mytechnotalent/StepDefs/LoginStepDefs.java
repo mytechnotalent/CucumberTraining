@@ -10,10 +10,8 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.Objects;
-
 import static org.testng.AssertJUnit.assertTrue;
 
 public class LoginStepDefs {
@@ -24,10 +22,13 @@ public class LoginStepDefs {
     @Given("the user is on the login page")
     public void theUserIsOnTheLoginPage() {
         String expectedUrl = ConfigReader.getProperty("BASE_URL") + ConfigReader.getProperty("LOGIN_PAGE_URL");
+
         if (!Objects.equals(driver.getCurrentUrl(), expectedUrl)) {
             driver.get(expectedUrl);
         }
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(loginPage.getEmailField()));
+
         assertTrue("User is not on the login page.", Objects.requireNonNull(driver.getCurrentUrl()).
                 contains(expectedUrl));
     }
@@ -49,6 +50,7 @@ public class LoginStepDefs {
     @Then("the user should be redirected to the account page")
     public void theUserShouldBeRedirectedToTheAccountPage() {
         String expectedUrl = ConfigReader.getProperty("BASE_URL") + ConfigReader.getProperty("ACCOUNT_PAGE_URL");
+
         wait.until(ExpectedConditions.urlToBe(expectedUrl));
         assert Objects.equals(driver.getCurrentUrl(), expectedUrl)
                 : "Login failed, user not redirected.";
