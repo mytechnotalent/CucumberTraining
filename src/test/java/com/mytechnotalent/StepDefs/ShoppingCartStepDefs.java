@@ -23,7 +23,7 @@ public class ShoppingCartStepDefs {
     AccountPage accountPage = new AccountPage(driver);
     CategoryPage categoryPage = new CategoryPage(driver);
     HomePage homePage = new HomePage(driver);
-    ProductPage productPage = new ProductPage(driver, driver);
+    ProductPage productPage = new ProductPage(driver);
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     @Given("the user is logged in")
@@ -82,6 +82,6 @@ public class ShoppingCartStepDefs {
 
     @Then("the shopping cart should be empty")
     public void theShoppingCartShouldBeEmpty() {
-        productPage.isCartEmpty();
+        assertTrue("The shopping cart is not empty!", productPage.isCartEmpty());
     }
 }
