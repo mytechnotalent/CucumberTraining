@@ -23,7 +23,7 @@ public class ShoppingCartStepDefs {
     AccountPage accountPage = new AccountPage(driver);
     CategoryPage categoryPage = new CategoryPage(driver);
     HomePage homePage = new HomePage(driver);
-    ProductPage productPage = new ProductPage(driver);
+    ProductPage productPage = new ProductPage(driver, driver);
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     @Given("the user is logged in")
@@ -73,5 +73,15 @@ public class ShoppingCartStepDefs {
     @Then("the shopping cart should display 1 item\\(s) - $500.00 in the checkout button")
     public void theShoppingCartShouldDisplayItemS$InTheCheckoutButton() {
         productPage.verifyCartTotal();
+    }
+
+    @And("the user clears the shopping cart")
+    public void theUserClearsTheShoppingCart() {
+        productPage.clearCart();
+    }
+
+    @Then("the shopping cart should be empty")
+    public void theShoppingCartShouldBeEmpty() {
+        productPage.isCartEmpty();
     }
 }

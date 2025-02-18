@@ -9,3 +9,5 @@ Feature: Shopping Cart
     And clicks the MacBook product
     And clicks Add to Cart
     Then the shopping cart should display 1 item(s) - $500.00 in the checkout button
+    And the user clears the shopping cart
+    Then the shopping cart should be empty
