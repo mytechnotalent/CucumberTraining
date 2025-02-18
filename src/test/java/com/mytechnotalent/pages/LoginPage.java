@@ -13,27 +13,21 @@ public class LoginPage {
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
-
     public void enterUsername(String username) {
         driver.findElement(emailField).sendKeys(username);
     }
-
     public void enterPassword(String password) {
         driver.findElement(passwordField).sendKeys(password);
     }
-
     public void clickLoginButton() {
         driver.findElement(loginButton).click();
     }
-
     public By getEmailField() {
         return emailField;
     }
-
     public By getPasswordField() {
         return passwordField;
     }
-
     public By getLoginButton() {
         return loginButton;
     }

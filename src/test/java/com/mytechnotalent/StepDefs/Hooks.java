@@ -14,7 +14,7 @@ public class Hooks {
     public void setup() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get(ConfigReader.getProperty("BASE_URL") + ConfigReader.getProperty("LOGIN_PAGE_ROUTE"));
+        driver.get(ConfigReader.getProperty("BASE_URL") + ConfigReader.getProperty("LOGIN_PAGE_URL"));
     }
 
     @After
